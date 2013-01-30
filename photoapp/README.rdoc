@@ -1,4 +1,0 @@
-== Welcome to Photo Uploader
-
-This is a simple Ruby on Rails application for the SAP NetWeaver Cloud platform.
-Check http://scn.sap.com/community/developer-center/cloud-platform
