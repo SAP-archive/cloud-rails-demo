@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @album.name %>
+</p>
+
+<% @album.photos.each do |photo| %>
+	<%= h photo.title %>
+	<%= image_tag photo.picture_web_path %>
+<% end %> 
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>
