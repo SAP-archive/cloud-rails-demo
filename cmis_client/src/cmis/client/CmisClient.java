@@ -23,6 +23,19 @@ import com.sap.ecm.api.RepositoryOptions;
 import com.sap.ecm.api.RepositoryOptions.Visibility;
 import com.sap.ecm.api.ServiceException;
 
+/*
+ * This is a Java adapter that the Photo Uploader application uses to interact with the
+ * SAP NetWeaver Cloud document service. It provides with several static methods for
+ * creating and deleting pictures in the application's ECM repository.
+ * 
+ * Consuming them from JRuby code is straightforward.
+ *
+ * Basic parameters for establishing an ECM session here are: repository key, unique name
+ * and destination name (which is used by the Photo Uploader application, but is in
+ * general optional). You can find them in the source code of the createEcmSession private 
+ * method.
+ */
+
 
 public class CmisClient {		
 	
