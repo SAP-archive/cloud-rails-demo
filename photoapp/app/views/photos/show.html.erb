@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @photo.title %>
+</p>
+
+<p>
+  <b>Picture name:</b>
+  <%= @photo.picture_name %>
+  <%= image_tag @photo.picture_web_path %>
+</p>
+
+<p>
+  <b>Album:</b>
+  <%= @photo.album_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

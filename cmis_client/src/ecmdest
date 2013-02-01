@@ -1,0 +1,6 @@
+Name=ecmdest
+Authentication=BasicAuthentication
+URL=https://ecm.nwtrial.ondemand.com/b/atom
+User=<some_SCN_user>
+Password=<this_user's_password>
+Type=HTTP
