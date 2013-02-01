@@ -1,0 +1,62 @@
+<!-- These are instructions for a couple of modifications that have to be applied in order to -->
+<!-- prepare the sample Photo Uploader application to run on SAP NetWeaver Cloud. 
+<!-- The modifications must be made in the web.xml file that is produced by Warbler. -->
+
+
+
+
+<!-- By default the Rack adapter is applied to the /* URL pattern which will catch the CMIS proxy servlet as well. -->
+<!-- That's why we need to reconfigure it to include only the application URLs that are really needed by Rails. -->
+<!-- Yes, this is ugly, but web.xml descriptor does not support excluding URL patterns. -->
+<!-- Please make sure that the RackFilter part of your web.xml looks like this: -->
+
+<filter>
+  <filter-name>RackFilter</filter-name>
+  <filter-class>org.jruby.rack.RackFilter</filter-class>
+</filter>
+  <filter-mapping>
+  <filter-name>RackFilter</filter-name>
+  <url-pattern>/albums/*</url-pattern>
+  <url-pattern>/photos/*</url-pattern>
+  <url-pattern>/albums</url-pattern>
+  <url-pattern>/photos</url-pattern>	
+</filter-mapping>
+
+
+
+
+<!-- Implementing our own CMIS proxy servlet for accessing CMIS documents in ECM requires this section to be added to web.xml -->
+<!-- Read more here: https://help.netweaver.ondemand.com/default.htm?expose_document_service.html#concept_F2D88F26B8674DD3A9EC737D37824C0D_96-->
+<!-- Please make sure that you add this declaration section to your web.xml -->
+
+<servlet>  
+  <servlet-name>cmisproxy</servlet-name>
+  <servlet-class>com.sap.photo.app.CMISProxyServlet</servlet-class>
+</servlet>
+  <servlet-mapping>
+  <servlet-name>cmisproxy</servlet-name>
+  <url-pattern>/cmis/*</url-pattern>
+</servlet-mapping>
+  
+  
+
+<!-- This is needed for enabling authentication for the Photo Uploader application. -->
+<!-- Read more in Section 2, point 3 here: https://help.netweaver.ondemand.com/default.htm?document_service_webapp.html#concept_A03491175BD2466780FB2187FE64E083_95 -->
+<!-- Please make sure that you add this declaration section to your web.xml -->    
+  
+<login-config>
+  <auth-method>FORM</auth-method>
+</login-config>
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>Protected Area</web-resource-name>
+    <url-pattern>/*</url-pattern>
+  </web-resource-collection>
+<auth-constraint>
+  <role-name>Everyone</role-name>
+</auth-constraint>
+</security-constraint>
+  <security-role>
+  <description>All SAP NetWeaver Cloud users</description>
+  <role-name>Everyone</role-name>
+</security-role>
