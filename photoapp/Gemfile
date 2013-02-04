@@ -1,22 +1,20 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.10'
+gem 'rails', '3.2.11'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
-gem 'rack', '1.4.1'
 gem 'execjs'
-gem 'activerecord-jdbc-adapter', '1.2.2.1'
+gem 'activerecord-jdbc-adapter'
 gem 'therubyrhino'
 
 group :development, :test do
   gem 'jdbc-sqlite3'
-  gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'jruby-openssl'
+  gem 'activerecord-jdbcsqlite3-adapter'  
   gem 'warbler'
-  gem 'jruby-rack', '1.1.7'
+  gem 'jruby-rack'
   gem 'jdbc-maxdb'
   gem 'activerecord-maxdb-adapter'
   gem 'rspec-rails', '2.11.0'
@@ -38,11 +36,10 @@ group :test do
   gem 'database_cleaner', '0.7.0'
 end
 
-group :production do  
-  gem 'jruby-openssl'
+group :production do    
   gem 'jdbc-maxdb'
   gem 'activerecord-maxdb-adapter'
-  gem 'activerecord-jdbc-adapter', '1.2.2.1'
+  gem 'activerecord-jdbc-adapter'
   gem 'execjs' 
   gem 'therubyrhino'
 end
