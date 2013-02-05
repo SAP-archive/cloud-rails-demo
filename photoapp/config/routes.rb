@@ -1,4 +1,6 @@
 Photoapp::Application.routes.draw do
+  get "weather/index"
+
   resources :photos
 
 

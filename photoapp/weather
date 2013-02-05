@@ -1,0 +1,4 @@
+Name=weather
+Type=HTTP
+Authentication=NoAuthentication
+URL=http://weather.yahooapis.com
