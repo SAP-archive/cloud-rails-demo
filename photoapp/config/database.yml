@@ -15,6 +15,7 @@ test:
   adapter: sqlite3
   database: db/test.sqlite3
 
+# Configuration for running on SAP NetWeaver Cloud
 production:
   adapter: maxdb
   encoding: utf8
