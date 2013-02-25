@@ -30,10 +30,9 @@ import com.sap.ecm.api.ServiceException;
  * 
  * Consuming them from JRuby code is straightforward.
  *
- * Basic parameters for establishing an ECM session here are: repository key, unique name
- * and destination name (which is used by the Photo Uploader application, but is in
- * general optional). You can find them in the source code of the createEcmSession private 
- * method.
+ * Basic parameters for establishing an ECM session here are repository key, unique name
+ * and user name on behalf of whom the connection will be created.
+ * You can find them in the source code of the createEcmSession private method.
  */
 
 
@@ -112,11 +111,11 @@ public class CmisClient {
 		String uniqueName = "photo.uploader.application";
 		String secretKey = "very_very_secret_key";
 		Session openCmisSession = null;
-		String destinationName = "ecmdest";
+		String userName = "<your_ECM_user>";
 		
 		try {		 
 		// connect to my repository
-		  openCmisSession = EcmFactory.connect(uniqueName, secretKey, destinationName);
+		  openCmisSession = EcmFactory.connectForUser(uniqueName, secretKey, userName);
 		}
 		catch (CmisObjectNotFoundException e) {
 		  // repository does not exist, so try to create it
@@ -126,14 +125,14 @@ public class CmisClient {
 		  options.setVisibility(Visibility.PROTECTED);
 		  options.setMultiTenantCapable(true);
 		  try { 
-			  EcmFactory.createRepository(options, destinationName);
+			  EcmFactory.createRepository(options);
 		  } catch (ServiceException sExc) {
 			  System.out.println(sExc);
 			  sExc.printStackTrace(System.out);
 			  throw sExc;
 		  }
 		  // should be created now, so connect to it
-		  openCmisSession = EcmFactory.connect(uniqueName, secretKey, destinationName);
+		  openCmisSession = EcmFactory.connectForUser(uniqueName, secretKey, userName);
 		}
 		return openCmisSession;
 	}
