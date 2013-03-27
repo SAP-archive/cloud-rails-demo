@@ -1,4 +1,4 @@
-nwcloud-rails-demo
+cloud-rails-demo
 ==================
 
-nwcloud-rails-demo
+cloud-rails-demo
