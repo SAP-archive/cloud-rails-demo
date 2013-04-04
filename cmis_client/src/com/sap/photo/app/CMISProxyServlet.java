@@ -3,8 +3,8 @@ package com.sap.photo.app;
 import com.sap.ecm.api.AbstractCmisProxyServlet;
 
 
-/* This is a Proxy Servlet for accessing the SAP NetWeaver Cloud document service as described here:
- * https://help.netweaver.ondemand.com/default.htm?expose_document_service.html#concept_F2D88F26B8674DD3A9EC737D37824C0D_96
+/* This is a Proxy Servlet for accessing the SAP HANA Cloud document service as described here:
+ * https://help.hana.ondemand.com/help/frameset.htm?76135da6711e1014839a8273b0e91070.html
  *
  * For using it we specify the key and unique name of our ECM repository that we want to be proxied to.
  */

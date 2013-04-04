@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 # Needed for the local case for asset precompilation, db migration, etc.
-# Please comment these two lines out when deploying on NetWeaver Cloud
+# Please comment these two lines out when deploying on SAP HANA Cloud
 # Note: This is fixed and no longer required since AR-JDBC Adapter v. 1.2.6
 # 
 # require 'jdbc/sqlite3'
