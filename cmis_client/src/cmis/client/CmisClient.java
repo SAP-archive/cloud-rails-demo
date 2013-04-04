@@ -25,7 +25,7 @@ import com.sap.ecm.api.ServiceException;
 
 /*
  * This is a Java adapter that the Photo Uploader application uses to interact with the
- * SAP NetWeaver Cloud document service. It provides with several static methods for
+ * SAP HANA Cloud document service. It provides with several static methods for
  * creating and deleting pictures in the application's ECM repository.
  * 
  * Consuming them from JRuby code is straightforward.

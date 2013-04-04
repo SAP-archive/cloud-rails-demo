@@ -1,5 +1,5 @@
 <!-- These are instructions for a couple of modifications that have to be applied in order to -->
-<!-- prepare the sample Photo Uploader application to run on SAP NetWeaver Cloud. 
+<!-- prepare the sample Photo Uploader application to run on SAP HANA Cloud. 
 <!-- The modifications must be made in the web.xml file that is produced by Warbler. -->
 
 
@@ -26,7 +26,7 @@
 
 
 <!-- Implementing our own CMIS proxy servlet for accessing CMIS documents in ECM requires this section to be added to web.xml -->
-<!-- Read more here: https://help.netweaver.ondemand.com/default.htm?expose_document_service.html#concept_F2D88F26B8674DD3A9EC737D37824C0D_96-->
+<!-- Read more here: https://help.hana.ondemand.com/help/frameset.htm?76135da6711e1014839a8273b0e91070.html -->
 <!-- Please make sure that you add this declaration section to your web.xml -->
 
 <servlet>  
@@ -41,7 +41,7 @@
   
 
 <!-- This is needed for enabling authentication for the Photo Uploader application. -->
-<!-- Read more in Section 2, point 3 here: https://help.netweaver.ondemand.com/default.htm?document_service_webapp.html#concept_A03491175BD2466780FB2187FE64E083_95 -->
+<!-- Read more in Section 2, point 3 here: https://help.hana.ondemand.com/help/frameset.htm?e62cd24abb571014b73792d85402f104.html -->
 <!-- Please make sure that you add this declaration section to your web.xml -->    
   
 <login-config>
